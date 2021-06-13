@@ -1,0 +1,13 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  model: one
+  year: 1990
+  mileage: 1
+  price: 1.5
+
+two:
+  model: two
+  year: 2000
+  mileage: 2
+  price: 2.5
