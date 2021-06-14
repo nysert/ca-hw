@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_06_13_150254) do
+ActiveRecord::Schema.define(version: 2021_06_13_155046) do
 
   create_table "vehicle_brands", force: :cascade do |t|
     t.string "name"
@@ -18,4 +18,24 @@ ActiveRecord::Schema.define(version: 2021_06_13_150254) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
+  create_table "vehicle_models", force: :cascade do |t|
+    t.integer "brand_id", null: false
+    t.string "name"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["brand_id"], name: "index_vehicle_models_on_brand_id"
+  end
+
+  create_table "vehicles", force: :cascade do |t|
+    t.integer "model_id", null: false
+    t.integer "year"
+    t.integer "mileage"
+    t.float "price"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["model_id"], name: "index_vehicles_on_model_id"
+  end
+
+  add_foreign_key "vehicle_models", "vehicle_brands", column: "brand_id"
+  add_foreign_key "vehicles", "vehicle_models", column: "model_id"
 end
