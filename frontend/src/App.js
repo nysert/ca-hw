@@ -77,7 +77,7 @@ function App() {
           <div className="vehicle" key={`vehicle-${v.id}`}>
             <div className="header">{v.brand_name} {v.model_name} {v.year}</div>
             <div className="image-container">
-              <img src="http://assets.stickpng.com/images/5a5218d52f93c7a8d5137f9b.png" alt="" />
+              <img src="https://raw.githubusercontent.com/nysert/ca-hw/master/frontend/image.png" alt="" />
             </div>
             <div className="footer">
               <div className="price">${v.price}</div>
